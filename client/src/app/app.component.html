@@ -1,0 +1,17 @@
+
+<div class="container">
+  <header>
+    <h1>Todo List</h1>
+  </header>
+  <app-todos-form></app-todos-form>
+  <ul>
+    <li  *ngFor="let todo of todos | async" [ngClass]="{'checked': todo.checked}">
+      <input type="checkbox" [checked]="todo.checked" (click)="toggleChecked(todo)"/>
+      <span class="text" >{{todo.description}}</span>
+      <button class="delete" (click)="removeTodo(todo)">X</button>
+    </li>
+  </ul>
+
+
+</div>
+
